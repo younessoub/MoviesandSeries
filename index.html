@@ -35,7 +35,50 @@
   <!--navigation bar end-->
   <div class="backimage"></div>
   <div class="homecontent">
-
+    <div class="add">
+      <button id="showingform">+</button>
+      <form id="form" class="form">
+        <label for="type">Add a  :</label>
+        <select name="type" id="type">
+          <option value="M">Movie</option>
+          <option value="T">Tv Show</option>
+        </select>
+        <br />
+        <label for="name"></label><br />
+        <input class="name" type="text" name="name" id="name" placeholder="Name" value="" />
+        <br /><br />
+        <label for="Rating">Rating:</label>
+        <select name="Rating" id="Rating">
+          <option value="0.5">0.5</option>
+          <option value="1">1</option>
+          <option value="1.5">1.5</option>
+          <option value="2">2</option>
+          <option value="2.5">2.5</option>
+          <option value="3">3</option>
+          <option value="3.5">3.5</option>
+          <option value="4">4</option>
+          <option value="4.5">4.5</option>
+          <option value="5">5</option>
+          <option value="5.5">5.5</option>
+          <option value="6">6</option>
+          <option value="6.5">6.5</option>
+          <option value="7">7</option>
+          <option value="7.5">7.5</option>
+          <option value="8">8</option>
+          <option value="8.5">8.5</option>
+          <option value="9">9</option>
+          <option value="9.5">9.5</option>
+          <option value="10">10</option>
+        </select>
+        
+        <br /><br />
+        <!--<label for="Rating">Rating</label> 
+        <input type="range" name="Rating" id="Rating" value="10" min=1 max=10/>-->
+        <input type="submit" name="Add" id="Add" value="Submit" />
+        
+      </form>
+    
+    </div>
   </div>
 
 
