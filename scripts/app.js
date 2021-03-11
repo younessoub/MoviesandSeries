@@ -8,5 +8,7 @@ navToggle.addEventListener("click",function (){
 });
 
 formToggle.addEventListener("click",function (){
+  console.log('test');
   
+  form.classList.toggle("displayform");
 });
