@@ -8,6 +8,7 @@ const name = document.getElementById('name');
 const rating = document.getElementById('Rating');
 const submit = document.getElementById('Add');
 
+var MandT = []; //Array holding Tv shows and movies
 
 
 navToggle.addEventListener("click",function (){
@@ -31,33 +32,33 @@ submit.addEventListener('click',function (e){
   e.preventDefault();
   var Type = type.value;
   var Name = name.value;
-  var Rating = rating.value;
+  var Rating = parseFloat(rating.value) ;
   name.value='';
   
   if(Type==='M'){
     var m = new movie(Name,Rating);
-    movies.push(m);
+    MandT.push(m);
+    sortmandt(MandT);
   }
   if(Type==='T'){
     var t = new tvshow(Name,Rating);
-    tvshows.push(t);
+    MandT.push(t);
+    sortmandt(MandT);
   }
   
   
-  for(let i=0;i<movies.length;i++){
+  /*for(let i=0;i<movies.length;i++){
     console.log(movies[i]);
   } 
   for(let i=0;i<tvshows.length;i++) {
     console.log(tvshows[i]);
   } 
-  /*console.log ;
+  console.log ;
    console.log (Name);
     console.log (Rating);*/
 });
 
-function sort(t,n,r){
-  
-}
+
 
 function movie(n,r){
   
@@ -72,5 +73,29 @@ function tvshow(n,r){
   this.rating = r;
 }
 
-var movies = [];
-var tvshows = [];
+
+//sorting movies and TV shows
+function sortmandt(mandt){
+  
+  
+  //sorting by rating
+  for(let i = 0;i<mandt.length;i++){
+    for(let j = 0;j<mandt.length-i-1;j++){
+      if(mandt[j].rating<mandt[j+1].rating){
+        let temp = mandt[j];
+        mandt[j] = mandt[j+1];
+        mandt[j+1] = temp;
+      }
+    }
+  }
+  /* objArray.sort(function(a, b) {
+    var textA = a.DepartmentName.toUpperCase();
+    var textB = b.DepartmentName.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+});  */
+  
+  //sorting by name if same rating
+  /*for (let i = 0; i < mandt.length; i++) {
+    console.log (mandt[i].rating);
+  }*/
+}
