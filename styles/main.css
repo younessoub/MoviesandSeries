@@ -140,11 +140,12 @@ body{
   width:4rem;
   height:2rem;
   text-align: center;
+  outline :none;
 }
 
 #showingform{
   font-size: 3rem;
-  border: black 1px solid ;
+  border:none;
   
   color:white;
   width:100%;
@@ -155,7 +156,7 @@ body{
 }
 
 #hideform{
-  border: black 1px solid ;
+  border:none;
   font-size: 3rem ;
   padding: 0;
   background: none;
