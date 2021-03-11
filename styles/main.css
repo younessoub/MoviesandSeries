@@ -113,7 +113,7 @@ body{
   left:5vw;
   z-index: -1;
   right:5vw;
-  opacity: ;
+ 
   overflow: auto;
 }
 .homecontent .add{
@@ -144,7 +144,8 @@ body{
 
 #showingform{
   font-size: 3rem;
-  border: none;
+  border: black 1px solid ;
+  
   color:white;
   width:100%;
   text-align :center;
@@ -153,6 +154,15 @@ body{
  
 }
 
+#hideform{
+  border: black 1px solid ;
+  font-size: 3rem ;
+  padding: 0;
+  background: none;
+  color:white;
+  font-weight: 900;
+  display:none;
+}
 
 
 .sorted .list{
