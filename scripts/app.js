@@ -38,12 +38,12 @@ submit.addEventListener('click',function (e){
   if(Type==='M'){
     var m = new movie(Name,Rating);
     MandT.push(m);
-    sortmandt(MandT);
+    sortAll(MandT);
   }
   if(Type==='T'){
     var t = new tvshow(Name,Rating);
     MandT.push(t);
-    sortmandt(MandT);
+    sortAll(MandT);
   }
   
   
@@ -75,11 +75,19 @@ function tvshow(n,r){
 
 
 //sorting movies and TV shows
-function sortmandt(mandt){
+function sortAll(mandt){
   
   
   //sorting by rating
-  for(let i = 0;i<mandt.length;i++){
+  mandt.sort(function(a, b) {
+    
+    var ratingA = a.rating;
+    var ratingB = b.rating;
+    return (ratingA > ratingB) ? -1 : (ratingA < ratingB) ? 1 : 0;
+ 
+  });  
+  
+  /*for(let i = 0;i<mandt.length;i++){
     for(let j = 0;j<mandt.length-i-1;j++){
       if(mandt[j].rating<mandt[j+1].rating){
         let temp = mandt[j];
@@ -87,15 +95,24 @@ function sortmandt(mandt){
         mandt[j+1] = temp;
       }
     }
-  }
-  /* objArray.sort(function(a, b) {
-    var textA = a.DepartmentName.toUpperCase();
-    var textB = b.DepartmentName.toUpperCase();
-    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-});  */
-  
-  //sorting by name if same rating
-  /*for (let i = 0; i < mandt.length; i++) {
-    console.log (mandt[i].rating);
   }*/
+  
+  
+  //sorting by name
+  mandt.sort(function(a, b) {
+    if(a.rating===b.rating){
+      var textA = a.name.toUpperCase();
+      var textB = b.name.toUpperCase();
+      return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+    } 
+    else{
+      return 0;
+    }
+  });  
+  
+  
+ for (let i = 0; i < mandt.length; i++) {
+    console.log (mandt[i].name+' : '+mandt[i].rating);
+   
+  }
 }
