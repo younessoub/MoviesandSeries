@@ -94,7 +94,7 @@ body{
   width:100vw;
   height:100vh;
   /*background-image: url("../images/background.jpg");*/
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/background.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/background2.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: absolute;
@@ -104,13 +104,79 @@ body{
 .homecontent{
   margin: auto;
   max-width: 500px;
-  height:60vh;
+  height:70vh;
   border: white solid 1px;
+  border-radius: 20px;
   /*background-color: rgb(255, 255, 255);*/
   position: absolute;
-  top:25vh;
-  left:15vw;
+  top:20vh;
+  left:5vw;
   z-index: -1;
-  right:15vw;
-  opacity: 0.5;
+  right:5vw;
+ 
+  overflow: auto;
+}
+.homecontent .add{
+  padding-left: 10px;
+  padding-right: 10px;
+  
+}
+.form{
+  color:white;
+  text-align :center;
+  display: none;
+}
+
+.displayform{
+  display:block;
+ 
+}
+
+#Add,#Rating, #type{
+  background-color:  rgb(4, 66, 123);
+  font-family: inherit;
+  border: none;
+  color:  white;
+  width:4rem;
+  height:2rem;
+  text-align: center;
+}
+
+#showingform{
+  font-size: 3rem;
+  border: black 1px solid ;
+  
+  color:white;
+  width:100%;
+  text-align :center;
+  background: none;
+  outline: none;
+ 
+}
+
+#hideform{
+  border: black 1px solid ;
+  font-size: 3rem ;
+  padding: 0;
+  background: none;
+  color:white;
+  font-weight: 900;
+  display:none;
+}
+
+
+.sorted .list{
+  color: white;
+  list-style: none;
+  padding: 0;
+  word-wrap: break-word;
+}
+
+.sorted .list li{
+  
+  margin:10px;
+}
+
+.sorted .list li span{
+  color:red;
 }
