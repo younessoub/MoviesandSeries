@@ -17,6 +17,7 @@ const title = document.getElementById('title');
 const list = document.getElementById('list');
 const movieslist = document.getElementById('movieslist');
 const tvshowslist = document.getElementById('tvshowslist');
+const trash = document.getElementById('trash');
 
 
 var MandT = []; //Array holding Tv shows and movies
@@ -75,17 +76,21 @@ submit.addEventListener('click',function (e){
   if(Type==='M'){
     var m = new movie(Name,Rating);
     MandT.push(m);
-    sortAll(MandT);
+    sortAll();
   }
   if(Type==='T'){
     var t = new tvshow(Name,Rating);
     MandT.push(t);
-    sortAll(MandT);
+    sortAll();
   }
-  
 
 });
 
+function remove(nam){
+  /*e.parentNode.parentNode.removeChild(e.parentNode);*/
+  console.log('test');
+  
+}
 
 
 function movie(n,r){
@@ -103,11 +108,11 @@ function tvshow(n,r){
 
 
 //sorting movies and TV shows
-function sortAll(mandt){
+function sortAll(){
   
   
   //sorting by rating
-  mandt.sort(function(a, b) {
+  MandT.sort(function(a, b) {
     
     var ratingA = a.rating;
     var ratingB = b.rating;
@@ -117,7 +122,7 @@ function sortAll(mandt){
   
   
   //sorting by name if (same rating)
-  mandt.sort(function(a, b) {
+  MandT.sort(function(a, b) {
     if(a.rating===b.rating){
       var textA = a.name.toUpperCase();
       var textB = b.name.toUpperCase();
@@ -128,20 +133,26 @@ function sortAll(mandt){
     }
   });  
   
- display(mandt);
+  display();
 }
 
-function display(arr){
+function display(){
   list.innerHTML = "";
   movieslist.innerHTML="";
   tvshowslist.innerHTML="";
-  for(var l in arr){
-    list.innerHTML += "<hr /><li>"+arr[l].name +" <span>"+arr[l].rating+"</span></li>";
-    if(arr[l].type==="M"){
-      movieslist.innerHTML += "<hr /><li>"+arr[l].name +" <span>"+arr[l].rating+"</span></li>";
+  
+  for(var l in MandT){
+    let Nam = MandT[l].name;
+    let newelement =  "<li><hr/>"+Nam +" <span>"+MandT[l].rating+"</span> <i class='fas fa-trash-alt' id='trash' onclick='remove(" +Nam+")'></i></li>";
+    
+    list.innerHTML += newelement;
+    
+    if(MandT[l].type==="M"){
+      movieslist.innerHTML +=newelement;
     }
-    if(arr[l].type==="T"){
-      tvshowslist.innerHTML += "<hr /><li>"+arr[l].name +" <span>"+arr[l].rating+"</span></li>";
+    
+    if(MandT[l].type==="T"){
+      tvshowslist.innerHTML += newelement;
     }
   }
  
