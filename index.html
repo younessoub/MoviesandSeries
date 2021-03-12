@@ -26,9 +26,9 @@
 
     <div class="navlinks" id="navlinks">
       <ul>
-        <li><a href="#Home">Home</a></li>
-        <li><a href="#Movies">Movies</a></li>
-        <li><a href="#TvShows">TvShows</a></li>
+        <li id="home"><a href="#">Home</a></li>
+        <li id="movies"><a href="#">Movies</a></li>
+        <li id="tvshows"><a href="#">TvShows</a></li>
       </ul>
     </div>
   </nav>
@@ -41,7 +41,7 @@
     <div class="add">
       <button id="hideform">&#8592;</button>
       <button id="showingform">+</button>
-      <form id="form" class="form ">
+      <form id="form" class="form" >
         <label for="type">Add a  :</label>
         <select name="type" id="type">
           <option value="M">Movie</option>
@@ -49,7 +49,7 @@
         </select>
         <br />
         <label for="name"></label><br />
-        <input class="name" type="text" name="name" id="name" placeholder="Name" value="" />
+        <input class="name" type="text" name="name" id="name" placeholder="Name" value="" required/>
         <br /><br />
         <label for="Rating">Rating:</label>
         <select name="Rating" id="Rating">
@@ -84,8 +84,8 @@
     </div>
     
     <div class="sorted" id="sorted">
-      <ul id="list" class="list"> 
-        <hr />
+      <ul id="list" class="list">
+        <!--<hr />
         <li>The Matrix jhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhjhhhhh <span>9</span></li>
         <hr />
         <li>Fight club  <span>10</span></li>
@@ -95,9 +95,26 @@
          <li>godfather   <span>9.5</span></li>
         <hr />
          <li>godfather   <span>9.5</span></li>
-        <hr />
+        <hr />-->
       </ul>
     </div>
+    
+    <div class="sortedmovies" id="sortedmovies">
+      <ul class="movieslist">
+         <li>mo</li>
+        <li>vi</li>
+        <li>es</li>
+      </ul>
+    </div>
+    
+    <div class="sortedtvshows" id="sortedtvshows">
+      <ul class="tvshowslist">
+        <li>tv</li>
+        <li>sho</li>
+        <li>ws</li>
+      </ul>
+    </div>
+    
   </div>
 
 
