@@ -31,18 +31,21 @@ home.addEventListener('click',function (){
   sorted.style.display = 'block';
   sortedmovies.style.display = 'none';
   sortedtvshows.style.display = 'none';
+  navlinks.classList.toggle("active");
 });
 
 movies.addEventListener('click',function (){
   sorted.style.display = 'none';
   sortedmovies.style.display = 'block';
   sortedtvshows.style.display = 'none';
+  navlinks.classList.toggle("active");
 });
 
 tvshows.addEventListener('click',function (){
   sorted.style.display = 'none';
   sortedmovies.style.display = 'none';
   sortedtvshows.style.display = 'block';
+  navlinks.classList.toggle("active");
 });
 
 navToggle.addEventListener("click",function (){
