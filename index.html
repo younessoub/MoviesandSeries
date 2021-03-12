@@ -7,15 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RateIt</title>
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
 </head>
- 
+
 <body>
-  
+
   <!--navigation bar start-->
-  
+
   <nav class="navbar">
     <div class="title"><a href="#" id="title">RateIt</a> </div>
 
@@ -34,23 +34,23 @@
     </div>
   </nav>
   <!--navigation bar end-->
-  
-  
+
+
   <div class="backimage"></div>
-  
+
   <div class="homecontent">
     <div class="add">
       <button id="hideform">&#8592;</button>
       <button id="showingform">+</button>
-      <form id="form" class="form" >
-        <label for="type">Add a  :</label>
+      <form id="form" class="form">
+        <label for="type">Add a :</label>
         <select name="type" id="type">
           <option value="M">Movie</option>
           <option value="T">Tv Show</option>
         </select>
         <br />
         <label for="name"></label><br />
-        <input class="name" type="text" name="name" id="name" placeholder="Name" value="" required/>
+        <input class="name" type="text" name="name" id="name" placeholder="Name" required />
         <br /><br />
         <label for="Rating">Rating:</label>
         <select name="Rating" id="Rating">
@@ -75,35 +75,35 @@
           <option value="9.5">9.5</option>
           <option value="10">10</option>
         </select>
-        
-        <br /><br />
-       
-        <input type="submit" name="Add" id="Add" value="Submit" />
-        
-      </form>
-    
-    </div>
-    
-    <div class="sorted" id="sorted">
-      <ul id="list" class="list">
 
-      </ul>
+        <br /><br />
+
+        <input type="submit" name="Add" id="Add" value="Submit" />
+
+      </form>
+
     </div>
-    
-    <div class="sortedmovies" id="sortedmovies">
-       <p style="font-family: inherit;color:white;margin-left: 5px;">Movies</p>
-      <ul class="movieslist" id="movieslist">
-      
-      </ul>
+    <div class="user-content">
+      <div class="sorted" id="sorted">
+        <ul id="list" class="list">
+
+        </ul>
+      </div>
+
+      <div class="sortedmovies" id="sortedmovies">
+        <p style="font-family: inherit;color:white;margin-left: 5px;">Movies</p>
+        <ul class="movieslist" id="movieslist">
+
+        </ul>
+      </div>
+
+      <div class="sortedtvshows" id="sortedtvshows">
+        <p style="font-family: inherit;color:white;margin-left: 5px;">TvShows</p>
+        <ul class="tvshowslist" id="tvshowslist">
+
+        </ul>
+      </div>
     </div>
-    
-    <div class="sortedtvshows" id="sortedtvshows">
-      <p style="font-family: inherit;color:white;margin-left: 5px;">TvShows</p>
-      <ul class="tvshowslist" id="tvshowslist">
-       
-      </ul>
-    </div>
-    
   </div>
 
 

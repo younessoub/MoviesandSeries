@@ -213,4 +213,9 @@ body{
 
 #trash{
   color: red ;
+  cursor: pointer;
+}
+
+#name{
+  font-size: 1rem;
 }
