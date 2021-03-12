@@ -80,16 +80,7 @@ submit.addEventListener('click',function (e){
     sortAll(MandT);
   }
   
-  
-  /*for(let i=0;i<movies.length;i++){
-    console.log(movies[i]);
-  } 
-  for(let i=0;i<tvshows.length;i++) {
-    console.log(tvshows[i]);
-  } 
-  console.log ;
-   console.log (Name);
-    console.log (Rating);*/
+
 });
 
 
@@ -121,16 +112,6 @@ function sortAll(mandt){
  
   });  
   
-  /*for(let i = 0;i<mandt.length;i++){
-    for(let j = 0;j<mandt.length-i-1;j++){
-      if(mandt[j].rating<mandt[j+1].rating){
-        let temp = mandt[j];
-        mandt[j] = mandt[j+1];
-        mandt[j+1] = temp;
-      }
-    }
-  }*/
-  
   
   //sorting by name if (same rating)
   mandt.sort(function(a, b) {
@@ -144,10 +125,6 @@ function sortAll(mandt){
     }
   });  
   
-  
- /*for (let i = 0; i < mandt.length; i++) {
-    console.log (mandt[i].name+' : '+mandt[i].rating);
- }*/
  display(mandt);
 }
 
