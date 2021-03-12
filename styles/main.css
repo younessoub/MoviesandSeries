@@ -181,3 +181,9 @@ body{
 .sorted .list li span{
   color:red;
 }
+
+.sortedmovies,
+.sortedtvshows{
+  
+  display:none;
+}

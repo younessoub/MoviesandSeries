@@ -7,9 +7,34 @@ const type = document.getElementById('type');
 const name = document.getElementById('name');
 const rating = document.getElementById('Rating');
 const submit = document.getElementById('Add');
+const home = document.getElementById('home');
+const movies = document.getElementById('movies');
+const tvshows = document.getElementById('tvshows');
+const sorted = document.getElementById('sorted');
+const sortedmovies= document.getElementById('sortedmovies');
+const sortedtvshows = document.getElementById('sortedtvshows');
+
 
 var MandT = []; //Array holding Tv shows and movies
 
+
+home.addEventListener('click',function (){
+  sorted.style.display = 'block';
+  sortedmovies.style.display = 'none';
+  sortedtvshows.style.display = 'none';
+});
+
+movies.addEventListener('click',function (){
+  sorted.style.display = 'none';
+  sortedmovies.style.display = 'block';
+  sortedtvshows.style.display = 'none';
+});
+
+tvshows.addEventListener('click',function (){
+  sorted.style.display = 'none';
+  sortedmovies.style.display = 'none';
+  sortedtvshows.style.display = 'block';
+});
 
 navToggle.addEventListener("click",function (){
   navlinks.classList.toggle("active");
@@ -98,7 +123,7 @@ function sortAll(mandt){
   }*/
   
   
-  //sorting by name
+  //sorting by name if (same rating)
   mandt.sort(function(a, b) {
     if(a.rating===b.rating){
       var textA = a.name.toUpperCase();
@@ -111,8 +136,13 @@ function sortAll(mandt){
   });  
   
   
- for (let i = 0; i < mandt.length; i++) {
+ /*for (let i = 0; i < mandt.length; i++) {
     console.log (mandt[i].name+' : '+mandt[i].rating);
-   
-  }
+ }*/
+ display(mandt);
+}
+
+function display(arr){
+  
+  
 }
