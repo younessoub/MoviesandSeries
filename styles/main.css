@@ -165,7 +165,17 @@ body{
   display:none;
 }
 
+#showingform, 
+#hideform, 
+#Add,
+#Rating,
+#type{
+  cursor:pointer;
+}
 
+
+.sortedtvshows .tvshowslist,
+.sortedmovies .movieslist,
 .sorted .list{
   color: white;
   list-style: none;
@@ -173,11 +183,15 @@ body{
   word-wrap: break-word;
 }
 
+.sortedtvshows .tvshowslist li,
+.sortedmovies .movieslist li,
 .sorted .list li{
   
   margin:10px;
 }
 
+.sortedtvshows .tvshowslist li span,
+.sortedmovies .movieslist li span,
 .sorted .list li span{
   color:red;
 }

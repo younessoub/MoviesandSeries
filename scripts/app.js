@@ -13,10 +13,19 @@ const tvshows = document.getElementById('tvshows');
 const sorted = document.getElementById('sorted');
 const sortedmovies= document.getElementById('sortedmovies');
 const sortedtvshows = document.getElementById('sortedtvshows');
+const title = document.getElementById('title');
+const list = document.getElementById('list');
+const movieslist = document.getElementById('movieslist');
+const tvshowslist = document.getElementById('tvshowslist');
 
 
 var MandT = []; //Array holding Tv shows and movies
 
+title.addEventListener('click',function (){
+  sorted.style.display = 'block';
+  sortedmovies.style.display = 'none';
+  sortedtvshows.style.display = 'none';
+});
 
 home.addEventListener('click',function (){
   sorted.style.display = 'block';
@@ -143,6 +152,18 @@ function sortAll(mandt){
 }
 
 function display(arr){
-  
+  list.innerHTML = "";
+  movieslist.innerHTML="";
+  tvshowslist.innerHTML="";
+  for(var l in arr){
+    list.innerHTML += "<hr /><li>"+arr[l].name +" <span>"+arr[l].rating+"</span></li>";
+    if(arr[l].type==="M"){
+      movieslist.innerHTML += "<hr /><li>"+arr[l].name +" <span>"+arr[l].rating+"</span></li>";
+    }
+    if(arr[l].type==="T"){
+      tvshowslist.innerHTML += "<hr /><li>"+arr[l].name +" <span>"+arr[l].rating+"</span></li>";
+    }
+  }
+ 
   
 }
