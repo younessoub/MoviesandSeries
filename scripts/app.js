@@ -21,14 +21,10 @@ const trash = document.getElementById('trash');
 const userContent = document.querySelector(".user-content");
 
 
-function updateD() {
-  var data = JSON.stringify(MandT);
-  //put data in php
-}
 
-var data  ; //get data from php
-if (data) {
-  var MandT = data;
+
+if (localStorage.getItem('content')) {
+  var MandT = JSON.parse(localStorage.getItem('content'));
   sortAll();
 }
 else {
@@ -36,6 +32,10 @@ else {
 }
 
 
+function updateLS() {
+  localStorage.setItem('content',JSON.stringify(MandT) );
+  sortAll();
+}
 
 title.addEventListener('click', function () {
   sorted.style.display = 'block';
@@ -92,13 +92,13 @@ submit.addEventListener('click', function (e) {
     if (Type === 'M') {
       var m = new movie(Name, Rating);
       MandT.push(m);
-      updateD();
+      updateLS();
       sortAll();
     }
     if (Type === 'T') {
       var t = new tvshow(Name, Rating);
       MandT.push(t);
-      updateD();
+      updateLS();
       sortAll();
     }
   }
@@ -106,11 +106,11 @@ submit.addEventListener('click', function (e) {
 
 //deleting elements
 function remove(index) {
-  //e.parentNode.parentNode.removeChild(e.parentNode);
+  
   MandT.splice(index, 1);
-  updateD();
+  updateLS();
   sortAll();
-  //console.log(index);
+  
 
 }
 
