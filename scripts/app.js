@@ -21,6 +21,21 @@ const trash = document.getElementById('trash');
 const userContent = document.querySelector(".user-content");
 
 
+function updateD() {
+  var data = JSON.stringify(MandT);
+  //put data in php
+}
+
+var data  ; //get data from php
+if (data) {
+  var MandT = data;
+  sortAll();
+}
+else {
+  var MandT = []; //Array holding Tv shows and movies
+}
+
+
 
 title.addEventListener('click', function () {
   sorted.style.display = 'block';
@@ -77,11 +92,13 @@ submit.addEventListener('click', function (e) {
     if (Type === 'M') {
       var m = new movie(Name, Rating);
       MandT.push(m);
+      updateD();
       sortAll();
     }
     if (Type === 'T') {
       var t = new tvshow(Name, Rating);
       MandT.push(t);
+      updateD();
       sortAll();
     }
   }
@@ -91,6 +108,7 @@ submit.addEventListener('click', function (e) {
 function remove(index) {
   //e.parentNode.parentNode.removeChild(e.parentNode);
   MandT.splice(index, 1);
+  updateD();
   sortAll();
   //console.log(index);
 
