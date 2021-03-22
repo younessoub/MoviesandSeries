@@ -71,14 +71,29 @@ navToggle.addEventListener("click", function () {
 showingForm.addEventListener("click", function () {
   hideForm.style.display = "block";
   showingForm.style.display = "none";
-  form.style.display = "block";
-
+ /* form.style.display = "block";*/
+  form.style.animationName = "show";
+  form.style.animationDuration="1s";
+  form.style.animationFillMode = "forwards";
+  form.style.animationTimingFunction="linear";
+  /*var c = form.childNodes;
+  for(var i=0; i<c.length; i++) {
+    
+    c[i].style.animationName = "show";
+  c[i].style.animationDuration="2s";
+  c[i].style.animationFillMode = "forwards";
+     
+}*/
+  
 });
 
 hideForm.addEventListener("click", function () {
   hideForm.style.display = "none";
   showingForm.style.display = "block";
-  form.style.display = "none";
+ /* form.style.display = "none";*/
+ form.style.animationName = "hide";
+  form.style.animationDuration="0.1s";
+  form.style.animationFillMode = "forwards";
 });
 
 submit.addEventListener('click', function (e) {
